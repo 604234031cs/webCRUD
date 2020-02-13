@@ -1,4 +1,1 @@
-<?php
-    require 'db.php';
-    echo "ok"
- ?>
+<?php require 'headtest.php' ?>
