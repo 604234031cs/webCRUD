@@ -1,11 +1,11 @@
 <?php
-session_start();
 
      require 'db.php';
-     $sql = 'SELECT * FROM people';
+     $sql = 'SELECT * FROM customer';
      $statement = $connection->prepare($sql);
      $statement->execute();
      $people = $statement->fetchAll(PDO::FETCH_OBJ);
+ 
 ?>
 
 <?php
@@ -13,7 +13,9 @@ session_start();
 ?>
 
 <div class ="container">
-     <div class ="card mt-5">
+<br>
+<br>
+     <div class ="card ">
           <div class ="card-header">
           <h2>All people</h2>
           </div>
@@ -24,15 +26,15 @@ session_start();
                     <th>id</th>
                     <th>name</th>
                     <th>lastname</th>
-                    <th>Email</th>
+                    <th>Adress</th>
                     <th>Action</th>
                </tr>
                <?php foreach($people as $person): ?>
                <tr>
-                    <td><?= $person->id ;?></td>
-                    <td><?= $person->name ;?></td>
-                    <td><?= $person->lasname ;?></td>
-                    <td><?= $person->email ;?></td>
+                    <td><?= $person->c_id ;?></td>
+                    <td><?= $person->c_name ;?></td>
+                    <td><?= $person->c_lastname ;?></td>
+                    <td><?= $person->c_address;?></td>
                     <td>
                          <a href="edit.php?id=<?= $person->id ?>" class ="btn btn-info">Edit</a>
                          <a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete.php?id=<?= $person->id ?>" class='btn btn-danger'>Delete</a>

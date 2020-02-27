@@ -10,12 +10,13 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      
     <title>E - B A N K</title>
   </head>
   <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#"><b>E-Bank</b></a>
+  <a class="navbar-brand" href="#"><b><img src="bank.png" alt="Logo" style="width:40px;"></b></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -26,8 +27,8 @@
     
     <form method ="get" action = "checklogin.php">
     <div class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="อีเมลหรือโทรศัพท์" name ="user" >
-      <input class="form-control mr-sm-2" type="password" placeholder="รหัสผ่าน"  name = "pass">
+      <input class="form-control mr-sm-2" type="text" placeholder="Username" name ="user" required>
+      <input class="form-control mr-sm-2" type="password" placeholder="Password"  name = "pass" required>
       <button class="btn btn-info my-2 my-sm-0" type="submit">เข้าสู้ระบบ</button>
         </div>
     </form>

@@ -4,7 +4,7 @@
         $user = $_GET['user'];
         $pass = $_GET['pass'];
 
-        $sql = "SELECT * FROM people WHERE email = :user and password = :pass";
+        $sql = "SELECT * FROM customer WHERE username = :user and password = :pass";
         $statement = $connection->prepare($sql);
 
         $statement->bindValue(':user', $user);
@@ -20,15 +20,20 @@
            header("refresh:1;index.php"); 
 
         }else{
-            $_SESSION["name"] = $people['name'];
+            $_SESSION["id"] = $people['c_id'];
+            $_SESSION["name"] = $people['c_name'];
+            $_SESSION["lasname"] = $people['c_lastname'];
+            $_SESSION["adress"] = $people['c_adress'];
+            $_SESSION["sex"] = $people['sex'];
+
            header('Location:home.php');
         }
        
     }else{
-        echo "ERROR";
+        session_destroy();
+        header('Location:index.php');
     }
    
-
     ?>
 
 

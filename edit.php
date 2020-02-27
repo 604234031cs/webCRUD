@@ -22,7 +22,9 @@
 <?php require 'header2.php';?> 
 
     <div class="container">
-        <div class="card mt-5" >
+    <br>
+    <br>
+        <div class="card " >
             <div class="card-header">
                 <h2><b>Update person</b></h2>
             </div>
@@ -61,5 +63,5 @@
        </div>
                 
     </div>
-    
+    555
 <?php require 'footer.php';?>
