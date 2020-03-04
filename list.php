@@ -1,6 +1,6 @@
 <?php
 
-     require 'db.php';
+     require 'config/db.php';
      $sql = 'SELECT * FROM customer';
      $statement = $connection->prepare($sql);
      $statement->execute();
@@ -15,6 +15,7 @@
 <div class ="container">
 <br>
 <br>
+<link rel="stylesheet" href="style.css">
      <div class ="card ">
           <div class ="card-header">
           <h2>All people</h2>
@@ -36,8 +37,8 @@
                     <td><?= $person->c_lastname ;?></td>
                     <td><?= $person->c_address;?></td>
                     <td>
-                         <a href="edit.php?id=<?= $person->id ?>" class ="btn btn-info">Edit</a>
-                         <a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete.php?id=<?= $person->id ?>" class='btn btn-danger'>Delete</a>
+                         <a href="edit.php?id=<?= $person->c_id ?>" class ="btn btn-info">Edit</a>
+                         <a onclick="return confirm('Are you sure you want to delete this entry?')" href="delete.php?id=<?= $person->c_id ?>" class='btn btn-danger'>Delete</a>
                </tr>
                <?php endforeach; ?>
           </table>

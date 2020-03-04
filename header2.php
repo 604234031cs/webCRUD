@@ -1,5 +1,4 @@
 <?php session_start(); ?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,32 +9,40 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>E-Bank</title>
+   
   </head>
   <body>
       <div class="sidebar">
-        <a href="home.php"><header> <?php echo $_SESSION['name']; ?></header> </a>
+        <a href="home.php"><header> <?php echo $_SESSION['name'] ."  ".$_SESSION["lastname"]; ?>  </header> </a>
         <ul>
-        <li>
-            <a href="account.php" class="has-arrow" aria-expanded="false">บัญชีผู้ใช้</a>     
+        <li class="nav-item dropdown">
+            <a href="account.php" class="dropdown-toggle" data-toggle="dropdown">บัญชีผู้ใช้</a>
+            <div class="dropdown-menu">
+        <a class="dropdown-item" href="useraccount.php">บัญชีธนาคาร</a>
+        <a class="dropdown-item" href="account.php">บัญชีผู้ใช้</a>
+        <a class="dropdown-item" href="addaccount.php">เพิ่มบัญชี</a>
+      </div> 
+            
       </li>
-       
+
+
+     
+
+        <!-- <li>
+              <a href="addaccount.php">บัญชีธนาคาร</a>
+            </li>
+           -->
         
-      <li>
-            <a href="list.php">รายชื่อ</a>
-          </li>
 
       
           <li>
-            <a href="#">ฝาก-ถอน</a>
+            <a href="withdraw.php">ฝาก-ถอน</a>
           </li>
-          <li>
-            <a href="check_money.php">เช็คยอดเงินในบัญชี</a>
-          </li>
+          
           <li>
             <a href="#">เงินกู้  </a>
           </li>
-            <a href="checklogin.php">ออกจากระบบ</a>
+            <a href="config/checklogin.php">ออกจากระบบ</a>
           </li>
         </ul>
       </div>

@@ -1,7 +1,7 @@
 <?php
     require 'db.php';
     $id = $_GET['id'];
-    $sql = 'SELECT * FROM people where id =:id';
+    $sql = 'SELECT * FROM customer where c_id =:id';
     $statement = $connection->prepare($sql);
     $statement->execute([':id'=> $id]);
     $person = $statement->fetch(PDO::FETCH_OBJ);  
@@ -10,7 +10,8 @@
         $name = $_POST['name'];
         $lastname = $_POST['lastname'];
         $email = $_POST['email'];
-        $sql = "UPDATE people set name=:name ,email=:email,lasname=:lastname WHERE id=:id ";
+        
+        $sql = "UPDATE customer set c_name=:name ,c_email=:email,c_lastname=:lastname WHERE c_id=:id ";
         $statement = $connection->prepare($sql);
         if($statement->execute([':name'=> $name,':email'=> $email,':lastname'=> $lastname,':id' => $id])){
             $message = 'Pass';
@@ -39,17 +40,17 @@
 
                 <div class="form-group">
                   
-                     <input  type="text" value = "<?=$person->name; ?>" name= "name" id="name" class = "form-control" placeholder ="ชื่อ"> 
+                     <input  type="text" value = "<?=$person->c_name; ?>" name= "name" id="name" class = "form-control" placeholder ="ชื่อ"> 
                      </div>
 
                      <div class="form-group">
                    
-                     <input   type="text" value = "<?=$person->lasname; ?>" name= "lastname" id="lastname" class = "form-control" placeholder ="นามสกุล"> 
+                     <input   type="text" value = "<?=$person->c_lastname; ?>" name= "lastname" id="lastname" class = "form-control" placeholder ="นามสกุล"> 
                      </div>
 
                         <div class="form-group">
                         
-                        <input type="email" value = "<?=$person->email; ?>"  name="email" id="email" class = "form-control" placeholder ="หมายเลขโทรศัพท์หรืออีเมล">
+                        <input type="email" value = "<?=$person->c_email; ?>"  name="email" id="email" class = "form-control" placeholder ="หมายเลขโทรศัพท์หรืออีเมล">
                     </div>
  
 
@@ -63,5 +64,5 @@
        </div>
                 
     </div>
-    555
+    
 <?php require 'footer.php';?>

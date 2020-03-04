@@ -1,14 +1,37 @@
-.card-header {
-    background-color: cornflowerblue;
+.container {
+    width: 50%;
+    padding: 10;
+    margin:  auto;
     
-}
-.card-body{
-    background-color: darkgrey;
-
-}
-
-.button1 {
-    background-color: white;
-    color: black;
-    border: 2px solid #021af3; /* Green */
   }
+  .card-haeder{
+    text-align:  center;
+    background-color: rgba(14, 179, 255, 0.904);
+  }
+  .card-body{
+
+    background-color: rgba(201, 234, 250, 0.904);
+  }
+  input[type=submit]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid rgb(9, 250, 21);
+    border-radius: 4px;
+  }
+  input[type=button]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid rgb(0, 162, 255);
+    border-radius: 4px;
+  }
+  h3{
+    color: rgb(3, 131, 250);
+  }
+
+
+
+  
